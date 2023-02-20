@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/html": [
+      "default",
+      {
+        "ignore": [
+          "iframe[allow]",
+          "iframe[allow]"
+        ]
+      }
+    ],
+    "axe/text-alternatives": [
+      "off",
+      {
+        "frame-title": "off"
+      }
+    ]
+  }
+}
