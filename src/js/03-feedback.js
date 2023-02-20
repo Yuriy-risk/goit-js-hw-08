@@ -25,12 +25,19 @@ formEl.addEventListener(
 formEl.addEventListener('submit', event => submitData(event));
 
 function setData() {
-  if (JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) === null) {
+  if (
+    JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY, JSON.stringify(data))) ===
+    null
+  ) {
     storedMail = data.email;
     storedMessage = data.message;
   } else {
-    storedMail = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).email;
-    storedMessage = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).message;
+    storedMail = JSON.parse(
+      localStorage.getItem(LOCALSTORAGE_KEY, JSON.stringify(data))
+    ).email;
+    storedMessage = JSON.parse(
+      localStorage.getItem(LOCALSTORAGE_KEY, JSON.stringify(data))
+    ).message;
     mailEl.value = storedMail;
     textAreaEl.value = storedMessage;
     data.email = storedMail;
